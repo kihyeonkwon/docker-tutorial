@@ -1,0 +1,17 @@
+# 기본
+docker run -dp 3000:3000 \
+    -w /app -v "$(pwd):/app" \
+    node:12-alpine \
+    sh -c "yarn install && yarn run dev"
+
+# m1 맥북 애플실리콘
+docker run -dp 3000:3000 \
+    -w /app -v "$(pwd):/app" \
+    node:12-alpine \
+    sh -c "apk add --no-cache python2 g++ make && yarn install && yarn run dev"
+
+# 파워쉘
+docker run -dp 3000:3000 `
+    -w /app -v "$(pwd):/app" `
+    node:12-alpine `
+    sh -c "yarn install && yarn run dev"
